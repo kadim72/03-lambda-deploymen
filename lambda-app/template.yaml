@@ -31,6 +31,14 @@ Resources:
           Properties:
             Path: /hello
             Method: get
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action:
+                - logs:CreateLogGroup
+                - logs:CreateLogStream
+                - logs:PutLogEvents
+              Resource: arn:aws:logs:us-east-1:123456789012:*
 
 Outputs:
   HelloWorldApi:
